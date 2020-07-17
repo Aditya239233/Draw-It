@@ -10,9 +10,10 @@ This application accepts a series of continuous points captured at even time int
 
 3. Click the START button to visualize how the drawing is recreated with fourier transform
 
-Note: If the left click is clicked after the drawing is complete, the cache is cleared and you'll have to start from the beginning.
+**Note:** If the left click is clicked after the user drawing is complete, the cache is cleared and you'll have to start from the beginning.
 
 
 Here's an example of the a hat.
 
 ![Hat](./assets/hat.gif)
+
