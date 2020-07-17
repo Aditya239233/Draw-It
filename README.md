@@ -15,4 +15,4 @@ Note: If the left click is clicked after the drawing is complete, the cache is c
 
 Here's an example of the a hat.
 
-! [Hat](./assets/hat.gif)
+![Hat](./assets/hat.gif)
