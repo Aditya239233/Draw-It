@@ -48,8 +48,8 @@ function epiCycles(x, y, rotation, fourier) {
       let freq = fourier[i].freq;
       let radius = fourier[i].amp;
       let phase = fourier[i].phase;
-      x += radius * cos(freq * time + phase + rotation);
-      y += radius * sin(freq * time + phase + rotation);
+      x += radius * cos(freq * angle + phase + rotation);
+      y += radius * sin(freq * angle + phase + rotation);
   
       stroke(255);
       noFill();

@@ -3,7 +3,7 @@ const HEIGHT = screen.height;
 
 let x = [];
 let fourier;
-let time = 0;
+let angle = 0;
 let path = [];
 let drawing = [];
 let mode = null;
@@ -13,9 +13,9 @@ function setup() {
   createCanvas(WIDTH, HEIGHT);
 }
 
-
 function draw() {
   background(0);
+
   createButton(mode!="fourier"? "START": "STOP")
     .position(50, 50)
     .mousePressed(click)
@@ -27,15 +27,16 @@ function draw() {
   if (mode == "draw") {
     let point = createVector(mouseX - width/2, mouseY - height/2);
     drawing.push(point);
+
     stroke(255, 0 , 0);
     noFill();
     beginShape();
-    for (v of drawing) {
-      vertex(v.x + width/2, v.y + height/2);
+    for (c of drawing) {
+      vertex(c.x + width/2, c.y + height/2);
       }
     endShape();
-    }
     
+    }
   else if (mode == "fourier") {
     stroke(255);
     textSize(16);
@@ -61,15 +62,14 @@ function draw() {
       vertex(path[i].x, path[i].y);
       }
     endShape();
+
+    angle += 2 * PI  / fourier.length; 
     
-    time += 2 * PI  / fourier.length; 
-    
-    if (time > 2 * PI ) {
-      time = 0;
+    if (angle > 2 * PI ) {
+      angle = 0;
       path = [];
       }
     }
-
   else {
     stroke(255, 0, 0, 150);
     noFill();
@@ -89,7 +89,7 @@ function click() {
     drawing = [];
     x = [];
     y = [];
-    time = 0;
+    angle = 0;
     path = [];
   }
   else {
@@ -97,8 +97,8 @@ function click() {
     for (let i = 0; i < drawing.length; i+=2) {
       x.push(new Complex(drawing[i].x, drawing[i].y));
     }
+
     fourier = dft(x);
-    
     fourier.sort((a, b) => b.amp - a.amp);
   }
 }
