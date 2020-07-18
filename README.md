@@ -2,6 +2,8 @@
 
 This application accepts a series of continuous points captured at even time intervals by the mouse to draw a figure. Once the figure is drawn, it is recreated with the help of Fourier Transform and visualized with the help of epicycles.
 
+Check it out at https://aditya239233.github.io/Draw-It/
+
 ## Quickstart:
 
 1. Left click once to start drawing
